@@ -143,9 +143,9 @@ def carve_file(f,blocksize,quality,Spath):
 
                             #filename = "N:\start_"+ time_s + '_' + str(int(l * blocksize + StartOffset)) + "_" + str(int(l * blocksize + EndOffset)) + "_" + "Cam_" + str(FirstCam) + '.dav'
                             try:
-                                filename = Spath +  "\Cam_"+ str(FirstCam)+ '_' + Time_conv(FirstDate_) + '-'+ Time_conv(FirstDate)+'_' + str(int(l * blocksize + StartOffset+jump)) + "_" + str(int(l * blocksize + EndOffset+jump)) + '.dav'
+                                filename = Spath + r"\Cam_"+ str(FirstCam)+ '_' + Time_conv(FirstDate_) + '-'+ Time_conv(FirstDate)+'_' + str(int(l * blocksize + StartOffset+jump)) + "_" + str(int(l * blocksize + EndOffset+jump)) + '.dav'
                             except:
-                                filename = Spath +  "\Cam_"+ str(FirstCam)+ '_' + '000000' + '-'+ '000000'+'_' + str(int(l * blocksize + StartOffset+jump)) + "_" + str(int(l * blocksize + EndOffset+jump)) + '.dav'
+                                filename = Spath + r"\Cam_"+ str(FirstCam)+ '_' + '000000' + '-'+ '000000'+'_' + str(int(l * blocksize + StartOffset+jump)) + "_" + str(int(l * blocksize + EndOffset+jump)) + '.dav'
 
                             copy_file = open(filename,'wb')
                             copy_file.write(subdata)
@@ -167,7 +167,7 @@ def carve_file(f,blocksize,quality,Spath):
         if (c == 0)and (StartOffset != 0) and (EndOffset != 0) :
             if (FirstQual == quality) or (quality == all):
                 subdata = buf[StartOffset:EndOffset]
-                filename = Spath +  "\Cam_"+ str(FirstCam)+ '_' + Time_conv(FirstDate_)+ '-'+ Time_conv(FirstDate)+'_' + str(int(l * blocksize + StartOffset+jump)) + "_" + str(int(l * blocksize + EndOffset+jump)) +  '.dav'
+                filename = Spath + r"\Cam_"+ str(FirstCam)+ '_' + Time_conv(FirstDate_)+ '-'+ Time_conv(FirstDate)+'_' + str(int(l * blocksize + StartOffset+jump)) + "_" + str(int(l * blocksize + EndOffset+jump)) +  '.dav'
                 copy_file = open(filename, 'wb')
                 copy_file.write(subdata)
                 copy_file.close()
@@ -209,7 +209,7 @@ f=open(Disk_List[int(cmd)],'rb')
 #****************End source block*******************#
 
 
-print("Enter destination path:   Example: H:\Video")
+print("Enter destination path:   Example: H:\\Video")
 cmd = input("Enter path: ")    
 Spath = cmd
 #Spath = "H:\Video_Ez-IP" # Destination path   
@@ -219,7 +219,6 @@ jump=0 # bytes multiple sector size (example:1174305148928)
 f.seek(jump,0) #move the file pointer forward by jump bytes from start of the file
 print('jump to: ', jump ,'  ok')
 blocksize=2**30  # Block size
-quality = all   # Quality of video frames. For all type of quality use 'all' without quotation marks.
+quality = 'all'   # Quality of video frames. For all type of quality use 'all' without quotation marks.
 
 print(carve_file(f,blocksize,quality,Spath))  #f- image for analysis; blocksize-block size for analysis; quality - determine by byte with offset 0x1D in the integer from the beginning of the signature 0x44484156FD;
-
