@@ -1,4 +1,4 @@
-''' Python 3.7  for Dahua  by Dmytro Moisiuk '''
+''' Python 3.12.3 for Dahua by Dmytro Moisiuk updated by DRCRecoveryData '''
 '''Script for carving video from DVR Dahua
 Tested model: Dahua DHI-HCVR4104HS-S2, Dahua DHI-HCVR5108C-S3, EZ-IP NVR1A04-4P  
 The following parameters should be changes at the end of the script:
