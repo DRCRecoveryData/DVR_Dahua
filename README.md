@@ -1,5 +1,5 @@
 ### DVR_Dahua_Python
-Python 3.7
+Python 3.12.3
 Script for recovering video from DHFS4.1
 
 #### Tested devices:
@@ -25,11 +25,11 @@ Executing the script is very easy: Simply open a terminal (on Windows: [Win] + [
 
  Linux:
 cd /path/to/script/
-python Python_3.7_Dahua_07.05.19.py 
+python Python_3.12.3_Dahua_23.4.24.py 
 
  Windows:
 cd C:\Path\to\script\
-python Python_3.7_Dahua_07.05.19.py
+python Python_3.12.3_Dahua_23.4.24.py
 
 
 
